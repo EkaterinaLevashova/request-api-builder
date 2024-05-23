@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.0 (2024-05-23)
+
+### Feature
+
+* **readme:** Add README.md ([`dd56465`](https://github.com/EkaterinaLevashova/request-builder/commit/dd56465b403827caa37245f84747f97648fa51a4))
+
 ## v0.1.0 (2024-05-23)
 
 ### Feature
