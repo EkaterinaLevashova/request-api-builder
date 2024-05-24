@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2024-05-24)
+
+### Feature
+
+* **rab:** Rename app folder ([`56db08b`](https://github.com/EkaterinaLevashova/request-api-builder/commit/56db08bbd9d0e301f77c26f01cdaff962841ef3c))
+* **requirements:** Add requirements_dev.txt ([`ea82062`](https://github.com/EkaterinaLevashova/request-api-builder/commit/ea8206256423285e260c22394bf86a307bad321a))
+
 ## v0.2.0 (2024-05-23)
 
 ### Feature
