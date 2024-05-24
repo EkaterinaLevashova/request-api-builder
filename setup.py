@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-__version__ = "2.0.2"
+__version__ = "2.0.4"
 
 setup(
     name="request_api_builder",
