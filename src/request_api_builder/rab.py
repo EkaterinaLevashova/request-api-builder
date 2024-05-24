@@ -43,6 +43,15 @@ class BuildRequests:
         )
         return response
 
+    @classmethod
+    def delete_request(cls, url_template, **url_params):
+        url = cls.base_url + url_template.format(**url_params)
+        response = requests.delete(
+            url,
+            headers={"Cookie": cls.cookie},
+        )
+        return response
+
 
 def build_request(method, url_template, data=None, **kwargs):
     br = BuildRequests()
@@ -55,5 +64,7 @@ def build_request(method, url_template, data=None, **kwargs):
         return br.post_request(url_template, data=data, **url_params)
     elif method.lower() == 'patch':
         return br.patch_request(url_template, data=data, **url_params)
+    elif method.lower() == 'delete':
+        return br.delete_request(url_template, **url_params)
     else:
         raise ValueError("Invalid method. Use 'get' or 'post'.")
