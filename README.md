@@ -1,10 +1,10 @@
-# request-api-builder
+# request_api_builder
 Request builder for quick testing API
 
 ## Use
  1. Import RequestBuilder
 ```python
-from request_builder import RequestBuilder
+from request_api_builder.rab import BuildRequests
 ```
 2. Set cookie and base url
 ```python
