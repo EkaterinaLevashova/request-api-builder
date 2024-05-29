@@ -53,7 +53,6 @@ class BuildRequests:
         return response
 
 
-def build_request(method, url_template, data=None, **kwargs):
 def build_request(method, url_template, data=None, json=None, **kwargs):
     br = BuildRequests()
     url_params = {k: v for k, v in kwargs.items() if '{' + k + '}' in url_template}
@@ -68,4 +67,4 @@ def build_request(method, url_template, data=None, json=None, **kwargs):
     elif method.lower() == 'delete':
         return br.delete_request(url_template, **url_params)
     else:
-        raise ValueError("Invalid method. Use 'get' or 'post'.")
+        raise ValueError("Invalid method. Use 'get', 'post', 'patch', or 'delete'.")
