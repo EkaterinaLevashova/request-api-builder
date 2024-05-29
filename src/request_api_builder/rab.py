@@ -54,6 +54,7 @@ class BuildRequests:
 
 
 def build_request(method, url_template, data=None, **kwargs):
+def build_request(method, url_template, data=None, json=None, **kwargs):
     br = BuildRequests()
     url_params = {k: v for k, v in kwargs.items() if '{' + k + '}' in url_template}
     query_params = {k: v for k, v in kwargs.items() if '{' + k + '}' not in url_template}
@@ -61,9 +62,9 @@ def build_request(method, url_template, data=None, **kwargs):
     if method.lower() == 'get':
         return br.get_request(url_template, params=query_params, **url_params)
     elif method.lower() == 'post':
-        return br.post_request(url_template, data=data, **url_params)
+        return br.post_request(url_template, data=data, json=json, **url_params)
     elif method.lower() == 'patch':
-        return br.patch_request(url_template, data=data, **url_params)
+        return br.patch_request(url_template, data=data, json=json, **url_params)
     elif method.lower() == 'delete':
         return br.delete_request(url_template, **url_params)
     else:
