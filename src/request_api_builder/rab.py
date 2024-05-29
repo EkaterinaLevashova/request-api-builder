@@ -2,6 +2,30 @@ import requests
 
 
 class BuildRequests:
+    """
+    A class to build and execute HTTP requests with a predefined base URL and cookies.
+
+    Attributes
+    ----------
+        cookie (str): A cookie string to be included in request headers.
+        base_url (str): The base URL for all requests.
+
+    Methods
+    ----------
+        - set_cookie(cookie):
+            Sets the cookie to be used in the request headers.
+        - set_base_url(base_url):
+            Sets the base URL for all requests.
+        - get_request(url_template, params=None, **url_params):
+            Executes a GET request with the given URL template and parameters.
+        - post_request(url_template, data=None, json=None, **url_params):
+            Executes a POST request with the given URL template, form data, and JSON data.
+        - patch_request(url_template, data=None, json=None, **url_params):
+            Executes a PATCH request with the given URL template, form data, and JSON data.
+        - delete_request(url_template, **url_params):
+            Executes a DELETE request with the given URL template.
+    """
+
     cookie = None
     base_url = None
 
