@@ -24,12 +24,13 @@ class BuildRequests:
         return response
 
     @classmethod
-    def post_request(cls, url_template, data=None, **url_params):
+    def post_request(cls, url_template, data=None, json=None, **url_params):
         url = cls.base_url + url_template.format(**url_params)
         response = requests.post(
             url,
             headers={"Cookie": cls.cookie},
             data=data,
+            json=json,
         )
         return response
 
