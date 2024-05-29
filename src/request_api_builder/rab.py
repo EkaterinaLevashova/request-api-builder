@@ -80,6 +80,26 @@ class BuildRequests:
 
 
 def build_request(method, url_template, data=None, json=None, **kwargs):
+    """
+    Build and execute an HTTP request.
+
+    Args
+    ----------
+        - method (str): The HTTP method to use ('get', 'post', 'patch', 'delete').
+        - url_template (str): The URL template to format with url_params.
+        - data (dict, optional): The form data to send in the body of the request (for 'post' and 'patch' methods).
+        - json (dict, optional): The JSON data to send in the body of the request (for 'post' and 'patch' methods).
+        - **kwargs: Additional parameters to format the URL and include in the query string.
+
+    Returns
+    ----------
+        - requests.Response: The HTTP response from the request.
+
+    Raises
+    ----------
+        - ValueError: If the method is not one of 'get', 'post', 'patch', or 'delete'.
+    """
+
     br = BuildRequests()
     url_params = {k: v for k, v in kwargs.items() if '{' + k + '}' in url_template}
     query_params = {k: v for k, v in kwargs.items() if '{' + k + '}' not in url_template}
